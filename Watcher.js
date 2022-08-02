@@ -11,7 +11,7 @@ class Watcher extends event.EventEmitter {
   watch() {
     this.watchList.forEach((value) => {
       fs.unwatchFile(value);
-      fs.watch(value, { persistent: false, recursive: true }, (event, filename) => {
+      fs.watch(value, { persistent: false, recursive: true }, (_, filename) => {
         console.log(chalk.yellow("mock data changed", filename));
         this.emit("process", filename);
       });

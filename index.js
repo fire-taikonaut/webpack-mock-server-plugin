@@ -1,6 +1,5 @@
 const express = require("express");
 const path = require("path");
-const event = require("events");
 const fs = require("fs");
 const chalk = require("chalk");
 const Watcher = require("./Watcher");
