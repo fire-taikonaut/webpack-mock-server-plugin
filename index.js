@@ -1,7 +1,6 @@
 const express = require("express");
 const path = require("path");
 const fs = require("fs");
-const chalk = require("chalk");
 const Watcher = require("./Watcher");
 
 const appOptions = {
@@ -23,7 +22,7 @@ class WebpackMockServerPlugin {
   listen() {
     const port = this.options.port;
     this.server = this.app.listen(port, () => {
-      console.log(chalk.green(`mock start: http://localhost: ${port}`));
+      console.log(`mock start: http://localhost: ${port}`);
     });
     this.createRouter();
     this.createWather();
