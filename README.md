@@ -26,6 +26,9 @@
     '/test': {code: 0, data: 'mockdata'}, // get
     'GET /test': {code: 0, data: 'mockdata'}, // get
     'POST /test': {code: 0, data: 'mockdata'}, // post
+    'POST /test': (req) => {
+      return {code: 0, data: 'mockdata'}
+    }, // post
     'PUT /test': {code: 0, data: 'mockdata'}, // put
     'DELETE /test': {code: 0, data: 'mockdata'}, // delete
   }
