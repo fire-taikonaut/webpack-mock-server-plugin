@@ -138,6 +138,4 @@ class WebpackMockServerPlugin {
   }
 }
 
-new WebpackMockServerPlugin().apply();
-
 module.exports = WebpackMockServerPlugin;
