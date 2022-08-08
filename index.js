@@ -33,9 +33,11 @@ class WebpackMockServerPlugin {
   }
   createWather() {
     this.watcher = new Watcher(this.options.dir);
+
     this.watcher.on("process", (dir) => {
       this.createRouter();
     });
+
     this.watcher.start();
   }
 
@@ -53,16 +55,17 @@ class WebpackMockServerPlugin {
           }
           res.json(this.formatData({ data: _value }));
         });
+        continue;
       }
 
+      const pathArr = path.split(" ");
       const method = this.method.find((m) => {
-        if (path.toLocaleLowerCase().startsWith(m)) {
+        if (m === pathArr[0].toLocaleLowerCase()) {
           return true;
         }
       });
-
-      if (method) {
-        router[method](path.toLocaleLowerCase().replace(method, "").trim())((req, res) => {
+      if (method && pathArr[1] && pathArr[1].startsWith("/")) {
+        router[method](pathArr[1], (req, res) => {
           let value = mock[path];
           let _value = value;
           if (typeof value === "function") {
@@ -134,5 +137,7 @@ class WebpackMockServerPlugin {
     }
   }
 }
+
+new WebpackMockServerPlugin().apply();
 
 module.exports = WebpackMockServerPlugin;

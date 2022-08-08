@@ -13,7 +13,11 @@ class Watcher extends event.EventEmitter {
       fs.unwatchFile(value);
       fs.watch(value, { persistent: false, recursive: true }, (_, filename) => {
         console.log("mock data changed", filename);
-        this.emit("process", filename);
+        try {
+          this.emit("process", filename);
+        } catch (error) {
+          console.log(error);
+        }
       });
     });
   }
