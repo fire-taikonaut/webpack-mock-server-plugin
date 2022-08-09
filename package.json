@@ -1,6 +1,6 @@
 {
   "name": "webpack-mock-server-plugin",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "webpack-mock-server-plugin",
   "main": "index.js",
   "scripts": {
@@ -29,6 +29,8 @@
   },
   "homepage": "https://github.com/fire-taikonaut/webpack-mock-server-plugin#readme",
   "dependencies": {
+    "body-parser": "^1.20.0",
+    "compression": "^1.7.4",
     "express": "^4.18.1"
   }
 }
