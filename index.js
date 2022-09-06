@@ -71,7 +71,7 @@ class WebpackMockServerPlugin {
           if (typeof value === "function") {
             _value = value(req, res);
           }
-          res.json(this.formatData({ data: _value }));
+          res.json(this.formatData(_value));
         });
         continue;
       }
@@ -89,7 +89,7 @@ class WebpackMockServerPlugin {
           if (typeof value === "function") {
             _value = value(req, res);
           }
-          res.json(this.formatData({ data: _value }));
+          res.json(this.formatData(_value));
         });
       }
     }
