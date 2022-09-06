@@ -130,12 +130,8 @@ class WebpackMockServerPlugin {
     });
     this.app.use(router);
   }
-  formatData({ code = 200, data = {}, message = "成功" }) {
-    return {
-      code,
-      data,
-      message,
-    };
+  formatData(data) {
+    return data;
   }
   subscribeProcess() {
     var that = this;

@@ -1,6 +1,6 @@
 {
   "name": "webpack-mock-server-plugin",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "webpack-mock-server-plugin",
   "main": "index.js",
   "scripts": {
